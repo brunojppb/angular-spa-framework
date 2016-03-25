@@ -5,7 +5,7 @@
       .directive('psFramework', function() {
         return {
           restrict: 'E',
-          transclusion: false,
+          transclude: true,
           templateUrl: 'ext-modules/psFramework/psFrameworkTemplate.html',
           scope: {
             title: "@",
