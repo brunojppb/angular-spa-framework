@@ -13,6 +13,10 @@
           $rootScope.$broadcast('ps-menu-item-selected-event', {route: route});
         };
 
+        this.getActiveElement = function() {
+          return $scope.activeElement;
+        }
+
       }]);
 
 }());

@@ -49,3 +49,10 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.ps-menu-active-indicator {
+  float: right;
+  color: #DDD;
+  margin-right: 0;
+  margin-top: 8px;
+}
