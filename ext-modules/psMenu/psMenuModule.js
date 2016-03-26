@@ -2,7 +2,7 @@
 
   "use strict";
 
-  var psMenu = angular.module('psMenu', []);
+  var psMenu = angular.module('psMenu', ['ngAnimate']);
 
 
 }());

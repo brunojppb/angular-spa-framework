@@ -10,11 +10,19 @@
 
       $scope.isMenuButtonVisible  = true;
       $scope.isMenuVisible        = true;
+      $scope.isMenuVertical       = true;
+      $scope.isMenuButtonVisible  = false;
 
       // Listen to broadcast messages
       // subscribe to listen the 'ps-menu-item-selected-event'
       $scope.$on('ps-menu-item-selected-event', function(event, data) {
         $scope.routeString = data.route;
+        checkWidth();
+        broadcastMenuState();
+      });
+
+      $scope.$on('ps-menu-orientation-changed-event', function(event, data) {
+        $scope.isMenuVertical = data.isMenuVertical;
       });
 
       // Listen to screen resize
@@ -37,7 +45,13 @@
       };
 
       var broadcastMenuState = function() {
-        $rootScope.$broadcast('ps-menu-show', {show: $scope.isMenuVisible});
+        $rootScope.$broadcast('ps-menu-show',
+          {
+            show: $scope.isMenuVisible,
+            isVertical: $scope.isMenuVertical,
+            allowHorizontalToggle: !$scope.isMenuButtonVisible
+          }
+        );
       };
 
       $timeout(function() {
