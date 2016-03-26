@@ -56,3 +56,14 @@
   margin-right: 0;
   margin-top: 8px;
 }
+
+.ps-menu-indicator-left {
+  float: right;
+  color: #DDD;
+  margin-right: 2px;
+  margin-top: 15px;
+}
+
+.ps-subitem-section {
+  padding-left: 16px;
+}
