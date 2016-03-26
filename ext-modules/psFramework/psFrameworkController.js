@@ -1,8 +1,12 @@
 (function() {
 
+  "use strict";
+
   angular
     .module('psFramework')
-    .controller('psFrameworkController', ['$scope', '$window', function($scope, $window) {
+    .controller('psFrameworkController',
+      ['$scope', '$window', '$timeout', '$rootScope',
+        function($scope, $window, $timeout, $rootScope) {
 
       $scope.isMenuButtonVisible  = true;
       $scope.isMenuVisible        = true;
@@ -17,6 +21,7 @@
       $($window).on('resize.psFramework', function() {
         $scope.$apply(function() {
           checkWidth();
+          broadcastMenuState();
         });
       });
 
@@ -25,14 +30,26 @@
         $($window).off('resize.psFramework');
       });
 
+      $scope.menuButtonClicked = function() {
+        $scope.isMenuVisible = !$scope.isMenuVisible;
+        broadcastMenuState();
+        $scope.$apply();
+      };
+
+      var broadcastMenuState = function() {
+        $rootScope.$broadcast('ps-menu-show', {show: $scope.isMenuVisible});
+      };
+
+      $timeout(function() {
+        checkWidth();
+      }, 0);
+
       // Show/hide menu left and menu button
       // based on the window size
       var checkWidth = function() {
-        var width = $($window).innerWidth();
+        var width = Math.max($($window).width(), $window.innerWidth);
         $scope.isMenuVisible = (width > 768);
         $scope.isMenuButtonVisible = !$scope.isMenuVisible;
-        console.log('Menu: ' + $scope.isMenuVisible);
-        console.log('Button: ' + $scope.isMenuButtonVisible);
       };
 
     }]);
