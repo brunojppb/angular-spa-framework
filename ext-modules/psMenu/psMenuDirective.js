@@ -10,7 +10,7 @@
         scope: {
 
         },
-        templateUrl: 'ext-modules/psMenu/psMenutemplate.html',
+        templateUrl: 'ext-modules/psMenu/psMenuTemplate.html',
         controller: 'psMenuCtrl',
         link: function(scope, el, attrs) {
           // Make sure that the first item on the menu will be selected

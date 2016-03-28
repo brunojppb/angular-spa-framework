@@ -2,7 +2,7 @@
 
   "use strict";
 
-  var app = angular.module('app', ['psFramework']);
+  var app = angular.module('app', ['ngRoute', 'psFramework']);
 
 
 }());

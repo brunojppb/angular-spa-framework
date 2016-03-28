@@ -5,8 +5,8 @@
   angular
     .module('psFramework')
     .controller('psFrameworkController',
-      ['$scope', '$window', '$timeout', '$rootScope',
-        function($scope, $window, $timeout, $rootScope) {
+      ['$scope', '$window', '$timeout', '$rootScope', '$location',
+        function($scope, $window, $timeout, $rootScope, $location) {
 
       $scope.isMenuButtonVisible  = true;
       $scope.isMenuVisible        = true;
@@ -17,6 +17,7 @@
       // subscribe to listen the 'ps-menu-item-selected-event'
       $scope.$on('ps-menu-item-selected-event', function(event, data) {
         $scope.routeString = data.route;
+        $location.path(data.route);
         checkWidth();
         broadcastMenuState();
       });
