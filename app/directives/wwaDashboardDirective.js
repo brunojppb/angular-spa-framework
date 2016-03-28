@@ -12,6 +12,8 @@
         template: '<ps-dashboard></ps-dashboard>',
         link: function(scope, el, attrs) {
 
+          scope.title = "Dashboard"
+
           scope.gridsterOpts = {
             columns: 12,
             margins: [20, 20],
