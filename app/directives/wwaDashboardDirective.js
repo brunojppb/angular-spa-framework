@@ -23,6 +23,46 @@
             swapping: true
           };
 
+          scope.widgetDefinitions = [
+            {
+              title: 'Temperature',
+              settings: {
+                sizeX: 3,
+                sizeY: 3,
+                minSizeX: 2,
+                minSizeY: 2,
+                template: '<wwa-temperature></wwa-temperature>',
+                widgetSettings: {
+                  id: 1000
+                }
+              }
+            },
+
+            {
+              title: 'Employee',
+              settings: {
+                sizeX: 5,
+                sizeY: 3,
+                template: '<wwa-employee></wwa-employee>',
+                widgetSettings: {
+                  id: 5001
+                }
+              }
+            },
+
+            {
+              title: 'Inventory',
+              settings: {
+                sizeX: 5,
+                sizeY: 3,
+                template: '<wwa-inventory></wwa-inventory>',
+                widgetSettings: {
+                  id: 1002
+                }
+              }
+            }
+          ];
+
           scope.widgets = [{
             title: 'First',
             sizeX: 3,
