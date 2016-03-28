@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="ext-modules/psMenu/psMenu.css">
     <link rel="stylesheet" href="bower_components/angular-gridster/dist/angular-gridster.min.css"/>
     <link rel="stylesheet" href="ext-modules/psDashboard/psDashboard.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="app/widgets/wwaTemperature/wwaTemperature.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="app/widgets/wwaInventory/wwaInventory.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="app/widgets/wwaEmployee/wwaEmployee.css" media="screen" title="no title" charset="utf-8">
+
+
 
     <!-- Libs -->
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
@@ -33,6 +38,7 @@
 
     <script src="ext-modules/psDashboard/psDashboardModule.js" charset="utf-8"></script>
     <script src="ext-modules/psDashboard/psDashboardDirective.js" charset="utf-8"></script>
+    <script src="ext-modules/psDashboard/psWidgetBodyDirective.js" charset="utf-8"></script>
 
 
     <script src="ext-modules/psFramework/psFrameworkModule.js" charset="utf-8"></script>
@@ -43,11 +49,17 @@
     <script src="app/appModule.js" charset="utf-8"></script>
     <script src="app/appConfig.js" charset="utf-8"></script>
     <script src="app/appRouteConfig.js" charset="utf-8"></script>
+    <script src="app/services/dataService.js" charset="utf-8"></script>
 
     <!-- Directives -->
     <script src="app/directives/wwaDashboardDirective.js" charset="utf-8"></script>
     <script src="app/directives/wwaGuidesDirective.js" charset="utf-8"></script>
     <script src="app/directives/wwaLocationsDirective.js" charset="utf-8"></script>
+
+    <!-- My custom Directives -->
+    <script src="app/widgets/wwaTemperature/wwaTemperatureDirective.js" charset="utf-8"></script>
+    <script src="app/widgets/wwaEmployee/wwaEmployeeDirective.js" charset="utf-8"></script>
+    <script src="app/widgets/wwaInventory/wwaInventoryDirective.js" charset="utf-8"></script>
 
   </head>
   <body class="container-fluid">
