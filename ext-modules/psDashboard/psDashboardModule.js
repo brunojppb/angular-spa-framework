@@ -2,7 +2,7 @@
 
   "use strict";
 
-  var psDashboard = angular.module('psDashboard', []);
+  var psDashboard = angular.module('psDashboard', ['gridster']);
 
 
 }());
