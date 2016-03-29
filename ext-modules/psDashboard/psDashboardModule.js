@@ -2,7 +2,7 @@
 
   "use strict";
 
-  var psDashboard = angular.module('psDashboard', ['gridster']);
+  var psDashboard = angular.module('psDashboard', ['gridster', 'ui.bootstrap']);
 
 
 }());

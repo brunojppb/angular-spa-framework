@@ -8,6 +8,7 @@
       return {
         templateUrl: 'app/widgets/wwaTemperature/wwaTemperatureTemplate.html',
         link: function(scope, el, attrs) {
+          scope.selectedLocation = null;
           // Load data
           dataService.getLocation(scope.item.widgetSettings.id)
             .then(function(data) {
