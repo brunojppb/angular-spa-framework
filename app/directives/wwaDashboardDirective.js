@@ -4,7 +4,7 @@
 
   angular
     .module('app')
-    .directive('wwaDashboard', function() {
+    .directive('wwaDashboard', ['$localStorage', function($localStorage) {
       return {
         scope: {
 
@@ -69,9 +69,13 @@
             }
           ];
 
-          scope.widgets = [];
+          scope.widgets = $localStorage.widgets || [];
+
+          scope.$watch('widgets', function() {
+            $localStorage.widgets = scope.widgets;
+          }, true);
         }
       };
-    });
+    }]);
 
 }());
