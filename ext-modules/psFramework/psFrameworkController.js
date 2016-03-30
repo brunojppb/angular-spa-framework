@@ -40,10 +40,8 @@
       });
 
       $scope.menuButtonClicked = function() {
-        $scope.$apply(function() {
-          $scope.isMenuVisible = !$scope.isMenuVisible;
-          broadcastMenuState();
-        });
+        $scope.isMenuVisible = !$scope.isMenuVisible;
+        broadcastMenuState();
       };
 
       var broadcastMenuState = function() {
